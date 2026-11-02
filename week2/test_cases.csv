@@ -1,0 +1,17 @@
+ID,Req,Test case,Preconditions,Steps,Test data,Expected result,Priority
+TC01,1.1,Search by clicking button returns results,Site is open,"1. Type word in search box. 2. Click search button",hammer,Products matching the word are shown,High
+TC02,1.1,Search by pressing Enter returns same results as button,Site is open,"1. Type word in search box. 2. Press Enter",hammer,Same products as TC01 are shown,High
+TC03,1.2,Search with no match shows empty state message,Site is open,"1. Type a word that matches nothing. 2. Click search button",xyznotaproduct,Page says no products found and shows zero products,High
+TC04,1.3,Clear button empties search and restores full list,A search has been performed,1. Click the clear button next to the search box,,Search box is empty and full product list is visible,Medium
+TC05,2.1,Sort by price high to low shows most expensive first,Site is open,"1. Open any category. 2. Select sort by price high to low",,First product has the highest price of all products shown,High
+TC06,2.1,Sort by name Z to A shows products in reverse alphabetical order,Site is open,"1. Open any category. 2. Select sort Z to A",,Products appear in reverse alphabetical order,Medium
+TC07,2.2,Sorting inside a category filters to that category only,Power Tools category is open,1. Select sort by price high to low,,Only Power Tools products appear and page still shows category name,High
+TC08,3.1,Typing a quantity in the product page field updates the cart,Product detail page is open,"1. Clear quantity field. 2. Type 3. 3. Click Add to cart. 4. Open cart",3,Cart shows quantity 3 for that product,High
+TC09,3.2,Changing quantity in cart updates line price and total,Cart has one item,1. Change quantity to 2. 2. Check line price and total,2,Line price is 2x unit price and cart total updates accordingly,High
+TC10,3.2,Cart icon count updates when cart quantity changes,Cart has one item with quantity 1,1. Change cart item quantity to 3,3,Cart icon shows 3,Medium
+TC11,3.3,Eco product line price is correct even with discount on total,Cart has an eco product,"1. Check unit price on product page. 2. Add to cart. 3. Check line price in cart",,Line price matches unit price; total may be lower due to eco discount,Medium
+TC12,3.4,Removing only item shows empty cart message,Cart has exactly one item,1. Click remove on the cart item,,Cart shows empty message and no products,High
+TC13,4.1,Contact form requires all five fields before sending,Contact page is open,"1. Leave all fields empty. 2. Click Send",,Form does not submit and shows validation errors,High
+TC14,4.2,Empty fields show one error message each under that field,Contact page is open,"1. Leave all fields empty. 2. Click Send",,Each empty field has exactly one error message beneath it,High
+TC15,4.3,Partially filled form keeps entered values after validation,Contact page is open,"1. Fill in first name only. 2. Click Send",John,First name still shows John after the form shows errors,Medium
+TC16,5.1,Out of stock product cannot be added to cart,An out-of-stock product is displayed,"1. Open the product page. 2. Try to add to cart",,Add to cart button is disabled or absent; product is not added,High
