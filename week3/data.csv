@@ -1,0 +1,8 @@
+quantity,expected_cart_value,expect_added
+1,1,true
+3,3,true
+5,5,true
+0,1,true
+-1,1,true
+abc,1,true
+100,99,true
